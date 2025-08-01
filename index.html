@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>إدارة المخزن</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- تسجيل الدخول -->
+  <div class="login-container" id="loginContainer">
+    <h2>تسجيل الدخول</h2>
+    <input type="text" id="username" placeholder="اسم المستخدم">
+    <input type="password" id="password" placeholder="كلمة المرور">
+    <button onclick="login()">دخول</button>
+    <p id="loginError" style="color:red;"></p>
+  </div>
+
+  <!-- لوحة التحكم -->
+  <div class="dashboard" id="dashboard" style="display:none;">
+    <h2>إدارة المخزن</h2>
+    <div class="container">
+      <!-- المخزون -->
+      <div class="inventory-section">
+        <h3>المخزون</h3>
+        <table id="inventoryTable">
+          <thead>
+            <tr>
+              <th>المنتج</th>
+              <th>الكمية</th>
+              <th>خيارات</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <h3>إضافة منتج جديد</h3>
+        <input type="text" id="productName" placeholder="اسم المنتج">
+        <input type="number" id="productQty" placeholder="الكمية">
+        <button onclick="addProduct()">إضافة</button>
+      </div>
+
+      <!-- سجل الحركات -->
+      <div class="logs-section">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <h3>سجل الحركات</h3>
+          <button class="clear-btn" onclick="clearLogs()">مسح السجل</button>
+        </div>
+        <table id="logsTable">
+          <thead>
+            <tr>
+              <th>العملية</th>
+              <th>المنتج</th>
+              <th>الكمية</th>
+              <th>الموظف</th>
+              <th>الوقت</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
