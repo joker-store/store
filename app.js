@@ -18,7 +18,7 @@ let currentUser = "";
 function login() {
   const user = document.getElementById("username").value;
   const pass = document.getElementById("password").value;
-  if (user === "admin" && pass === "1234") {
+  if (user === "admin" && pass === "2050") {
     currentUser = user;
     document.getElementById("loginContainer").style.display = "none";
     document.getElementById("dashboard").style.display = "block";
@@ -123,3 +123,4 @@ function loadLogs() {
     });
   });
 }
+
